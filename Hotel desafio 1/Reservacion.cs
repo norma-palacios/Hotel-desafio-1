@@ -11,6 +11,6 @@ namespace Hotel_desafio_1
         public string numeroDeHabitacion { set; get; }
         public   int cantidadDeNoches { set; get; }
         public  double montoTotal { set; get; }
-        public string identificacionDelCliente { set; get;  }
+        public Cliente cliente { set; get;  }
     }
 }

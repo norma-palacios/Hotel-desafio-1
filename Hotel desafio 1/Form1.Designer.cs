@@ -37,6 +37,7 @@
             label1 = new Label();
             txbNombre = new TextBox();
             groupBox2 = new GroupBox();
+            nudNumeroNoches = new NumericUpDown();
             nudHabitacion = new NumericUpDown();
             nudPiso = new NumericUpDown();
             label8 = new Label();
@@ -44,7 +45,6 @@
             Cliente = new Label();
             btnReservar = new Button();
             label5 = new Label();
-            txbNumeroDeNoches = new TextBox();
             label4 = new Label();
             label3 = new Label();
             dgvDisponibilidad = new DataGridView();
@@ -54,8 +54,6 @@
             clNumHabitacion = new DataGridViewTextBoxColumn();
             clCliente = new DataGridViewTextBoxColumn();
             clMontoTotal = new DataGridViewTextBoxColumn();
-            btnHabDisponible = new Button();
-            btnRebActivas = new Button();
             groupBox3 = new GroupBox();
             btnCanReservacion = new Button();
             label7 = new Label();
@@ -63,6 +61,7 @@
             label6 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudNumeroNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudHabitacion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPiso).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDisponibilidad).BeginInit();
@@ -149,6 +148,7 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ActiveCaption;
+            groupBox2.Controls.Add(nudNumeroNoches);
             groupBox2.Controls.Add(nudHabitacion);
             groupBox2.Controls.Add(nudPiso);
             groupBox2.Controls.Add(label8);
@@ -156,7 +156,6 @@
             groupBox2.Controls.Add(Cliente);
             groupBox2.Controls.Add(btnReservar);
             groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(txbNumeroDeNoches);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label3);
             groupBox2.Location = new Point(12, 286);
@@ -165,7 +164,15 @@
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Reserva habitacion";
-            groupBox2.Enter += groupBox2_Enter;
+            // 
+            // nudNumeroNoches
+            // 
+            nudNumeroNoches.Location = new Point(180, 128);
+            nudNumeroNoches.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudNumeroNoches.Name = "nudNumeroNoches";
+            nudNumeroNoches.Size = new Size(150, 27);
+            nudNumeroNoches.TabIndex = 10;
+            nudNumeroNoches.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // nudHabitacion
             // 
@@ -195,14 +202,13 @@
             label8.Size = new Size(158, 20);
             label8.TabIndex = 7;
             label8.Text = "Numero de habitacion";
-            label8.Click += label8_Click;
             // 
             // cmbClientes
             // 
             cmbClientes.FormattingEnabled = true;
-            cmbClientes.Location = new Point(177, 161);
+            cmbClientes.Location = new Point(77, 169);
             cmbClientes.Name = "cmbClientes";
-            cmbClientes.Size = new Size(147, 28);
+            cmbClientes.Size = new Size(253, 28);
             cmbClientes.TabIndex = 6;
             cmbClientes.Text = "selecione cliente";
             // 
@@ -214,7 +220,6 @@
             Cliente.Size = new Size(55, 20);
             Cliente.TabIndex = 5;
             Cliente.Text = "Cliente";
-            Cliente.Click += Cliente_Click;
             // 
             // btnReservar
             // 
@@ -234,14 +239,6 @@
             label5.Size = new Size(134, 20);
             label5.TabIndex = 4;
             label5.Text = "Numero de noches";
-            label5.Click += label5_Click;
-            // 
-            // txbNumeroDeNoches
-            // 
-            txbNumeroDeNoches.Location = new Point(177, 128);
-            txbNumeroDeNoches.Name = "txbNumeroDeNoches";
-            txbNumeroDeNoches.Size = new Size(147, 27);
-            txbNumeroDeNoches.TabIndex = 3;
             // 
             // label4
             // 
@@ -259,7 +256,6 @@
             label3.Size = new Size(131, 20);
             label3.TabIndex = 1;
             label3.Text = "Piso de habitacion";
-            label3.Click += label3_Click;
             // 
             // dgvDisponibilidad
             // 
@@ -269,9 +265,8 @@
             dgvDisponibilidad.Location = new Point(425, 22);
             dgvDisponibilidad.Name = "dgvDisponibilidad";
             dgvDisponibilidad.RowHeadersWidth = 51;
-            dgvDisponibilidad.Size = new Size(417, 188);
+            dgvDisponibilidad.Size = new Size(417, 229);
             dgvDisponibilidad.TabIndex = 4;
-            dgvDisponibilidad.CellContentClick += dataGridView1_CellContentClick;
             // 
             // clNumeroDeHabitacion
             // 
@@ -295,7 +290,7 @@
             dgvReservaciones.Location = new Point(425, 286);
             dgvReservaciones.Name = "dgvReservaciones";
             dgvReservaciones.RowHeadersWidth = 51;
-            dgvReservaciones.Size = new Size(417, 189);
+            dgvReservaciones.Size = new Size(417, 269);
             dgvReservaciones.TabIndex = 5;
             // 
             // clNumHabitacion
@@ -319,25 +314,6 @@
             clMontoTotal.Name = "clMontoTotal";
             clMontoTotal.Width = 125;
             // 
-            // btnHabDisponible
-            // 
-            btnHabDisponible.Location = new Point(556, 216);
-            btnHabDisponible.Name = "btnHabDisponible";
-            btnHabDisponible.Size = new Size(168, 48);
-            btnHabDisponible.TabIndex = 6;
-            btnHabDisponible.Text = "ver habitaciones disponibles";
-            btnHabDisponible.UseVisualStyleBackColor = true;
-            btnHabDisponible.Click += btnHabDisponible_Click;
-            // 
-            // btnRebActivas
-            // 
-            btnRebActivas.Location = new Point(573, 488);
-            btnRebActivas.Name = "btnRebActivas";
-            btnRebActivas.Size = new Size(165, 52);
-            btnRebActivas.TabIndex = 7;
-            btnRebActivas.Text = "ver reservaciones activas ";
-            btnRebActivas.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
             groupBox3.BackColor = SystemColors.ActiveCaption;
@@ -356,15 +332,16 @@
             // 
             btnCanReservacion.Location = new Point(119, 85);
             btnCanReservacion.Name = "btnCanReservacion";
-            btnCanReservacion.Size = new Size(94, 29);
+            btnCanReservacion.Size = new Size(98, 29);
             btnCanReservacion.TabIndex = 3;
             btnCanReservacion.Text = "Cancelar habitacion";
             btnCanReservacion.UseVisualStyleBackColor = true;
+            btnCanReservacion.Click += btnCanReservacion_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(21, 41);
+            label7.Location = new Point(19, 48);
             label7.Name = "label7";
             label7.Size = new Size(158, 20);
             label7.TabIndex = 2;
@@ -391,8 +368,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(854, 718);
             Controls.Add(groupBox3);
-            Controls.Add(btnRebActivas);
-            Controls.Add(btnHabDisponible);
             Controls.Add(dgvReservaciones);
             Controls.Add(dgvDisponibilidad);
             Controls.Add(groupBox2);
@@ -404,6 +379,7 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudNumeroNoches).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudHabitacion).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudPiso).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvDisponibilidad).EndInit();
@@ -427,7 +403,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox txbNumeroDeNoches;
         private Label Cliente;
         private ComboBox cmbClientes;
         private Button btnReservar;
@@ -435,8 +410,6 @@
         private DataGridView dgvReservaciones;
         private DataGridViewTextBoxColumn clNumeroDeHabitacion;
         private DataGridViewTextBoxColumn clDisponibilidad;
-        private Button btnHabDisponible;
-        private Button btnRebActivas;
         private DataGridViewTextBoxColumn clNumHabitacion;
         private DataGridViewTextBoxColumn clCliente;
         private DataGridViewTextBoxColumn clMontoTotal;
@@ -448,5 +421,6 @@
         private Label label8;
         private NumericUpDown nudHabitacion;
         private NumericUpDown nudPiso;
+        private NumericUpDown nudNumeroNoches;
     }
 }

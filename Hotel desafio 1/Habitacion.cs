@@ -8,14 +8,46 @@ namespace Hotel_desafio_1
 {
     class Habitacion
     {
-        string numeroDeHabitacion { get; set; }
-        string tipoDeHabitacion { get; set; }
-        string precioPorNoche { get; set; }
-        bool estadoDeHabitacion { get; set; }
+        public string numeroDeHabitacion { get; set; }
+        public string tipoDeHabitacion { get; set; }
+        public double precioPorNoche { get; set; }
+        public bool estadoDeHabitacion { get; set; }
 
-        public Habitacion() 
+        public Habitacion(bool estado) 
         {
-            estadoDeHabitacion = true;
+            estadoDeHabitacion = estado;
+        }
+
+        public double calcularCostoDeHabitacion(int numeroHabitacion)
+        {
+            if (numeroHabitacion <= 1 && numeroHabitacion >= 20)
+            {
+                return 100.00;
+            }
+            else if (numeroHabitacion <= 21 && numeroHabitacion >= 40)
+            {
+                return 200.00;
+            }
+            else
+            {
+                return 300.00;
+            }
+        }
+
+        public string obtenerTipoDeHabitacion(int numeroHabitacion)
+        {
+            if (numeroHabitacion <= 1 && numeroHabitacion >= 20)
+            {
+                return "Sencilla";
+            }
+            else if (numeroHabitacion <= 21 && numeroHabitacion >= 40)
+            {
+                return "Doble";
+            }
+            else
+            {
+                return "Suite";
+            }
         }
     }
 }

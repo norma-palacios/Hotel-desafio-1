@@ -9,13 +9,8 @@ namespace Hotel_desafio_1
     class Reservacion
     {
         public string numeroDeHabitacion { set; get; }
-       public   int cantidadDeNoches { set; get; }
-       public  double montoTotal { set; get; }
+        public   int cantidadDeNoches { set; get; }
+        public  double montoTotal { set; get; }
         public string identificacionDelCliente { set; get;  }
-
-        public double calcularCostoabitacion()
-        {
-
-        }
     }
 }

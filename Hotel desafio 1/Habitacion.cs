@@ -24,11 +24,11 @@ namespace Hotel_desafio_1
         // el piso 5 vale 300.00
         public double calcularCostoDeHabitacion(int numeroHabitacion)
         {
-            if (numeroHabitacion <= 1 && numeroHabitacion >= 20)
+            if (numeroHabitacion >= 1 && numeroHabitacion <= 20)
             {
                 return 100.00;
             }
-            else if (numeroHabitacion <= 21 && numeroHabitacion >= 40)
+            else if (numeroHabitacion >= 21 && numeroHabitacion <= 40)
             {
                 return 200.00;
             }
@@ -44,11 +44,11 @@ namespace Hotel_desafio_1
         // el piso 5 es Suit
         public string obtenerTipoDeHabitacion(int numeroHabitacion)
         {
-            if (numeroHabitacion <= 1 && numeroHabitacion >= 20)
+            if (numeroHabitacion >= 1 && numeroHabitacion <= 20)
             {
                 return "Sencilla";
             }
-            else if (numeroHabitacion <= 21 && numeroHabitacion >= 40)
+            else if (numeroHabitacion >= 21 && numeroHabitacion <= 40)
             {
                 return "Doble";
             }
